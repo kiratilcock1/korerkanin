@@ -13,6 +13,7 @@ $darkGray: #333;
 $gray: #666;
 $lightGray: #eee;
 $white: #fff;
+$purple: #6737fb;
 
 // Font stacks
 $helvetica: Helvetica, Arial, sans-serif;
@@ -23,5 +24,10 @@ $georgia: Georgia, serif;
 @mixin mobile {
   @media screen and (max-width: 640px) {
     @content;
+  }
+}
+@mixin mobile-small {
+@media screen and (max-width: 320px) {
+  @content;
   }
 }
