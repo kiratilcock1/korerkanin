@@ -331,14 +331,6 @@ footer {
   width: auto;
 }
 
-.color-line {
-  height: 3px;
-  max-width: 220px;
-  width: 100%;
-  background: linear-gradient(45deg, #6737fb, #3d84ee);
-  border: none;
-}
-
 .highlight {
   background-color: #efefef;
   padding: 7px 7px 7px 10px;
