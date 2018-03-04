@@ -84,8 +84,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Inconsolata', monospace;
   color: #222;
   font-weight: bold;
-  line-height: 1.7;
-  margin: 1em 0 15px;
+  line-height: 1.2;
+  margin: 15px 0;
   padding: 0;
 }
 @media screen and (max-width: 640px) {
@@ -228,11 +228,11 @@ img {
   padding: 10px 20px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
-  border-radius: 1px;
+  border-radius: 2px;
   vertical-align: middle;
   text-align: center;
   text-decoration: none !important;
-  border: 1px solid black;
+  border: 1px solid #6737fb;
   color: white;
   background: linear-gradient(45deg, #6737fb, #3d84ee);
   box-shadow: 0 0 3px 1px rgba(60, 60, 60, 0.2);
@@ -301,7 +301,7 @@ footer {
 #particles-js {
   position: absolute;
   width: 100%;
-  height: calc(100% - 70px);
+  height: calc(100% - 80px);
   background-color: none;
   background-image: url("");
   background-repeat: no-repeat;
@@ -325,6 +325,18 @@ footer {
 
 .white:hover {
   color: #cdcdcd;
+}
+
+.logo {
+  width: auto;
+}
+
+.color-line {
+  height: 3px;
+  max-width: 220px;
+  width: 100%;
+  background: linear-gradient(45deg, #6737fb, #3d84ee);
+  border: none;
 }
 
 .highlight {
