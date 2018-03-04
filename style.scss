@@ -182,9 +182,9 @@ img {
   vertical-align: middle;
   text-align: center;
   text-decoration: none !important;
-  border: 1px solid $purple;
+  border: 1px solid $accent;
   color: white;
-  background: $purple-grad;
+  background: $accent-grad;
   box-shadow: 0 0 3px 1px rgba(60, 60, 60, 0.2);
   text-transform: capitalize;
 }
@@ -194,12 +194,12 @@ header {
 }
 header > div > a {
   line-height: 50px;
-  color: $purple;
+  color: $accent;
   padding-left: 10px;
   padding-right: 10px;
 }
 header > div > a:hover {
-  color: $purple;
+  color: $accent;
 }
 header > div {
   max-width: 40%;
@@ -225,7 +225,7 @@ footer {
   position: absolute;
   bottom: 0;
   left: 0;
-  background: $purple-grad;
+  background: $accent-grad;
   width: 100%;
   z-index: 10;
 }
