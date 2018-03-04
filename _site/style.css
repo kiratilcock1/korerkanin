@@ -232,9 +232,9 @@ img {
   vertical-align: middle;
   text-align: center;
   text-decoration: none !important;
-  border: 1px solid #6737fb;
+  border: 1px solid #fb3737;
   color: white;
-  background: linear-gradient(45deg, #6737fb, #3d84ee);
+  background: linear-gradient(45deg, #fb3737, #eb471b);
   box-shadow: 0 0 3px 1px rgba(60, 60, 60, 0.2);
   text-transform: capitalize;
 }
@@ -246,13 +246,13 @@ header {
 
 header > div > a {
   line-height: 50px;
-  color: #6737fb;
+  color: #fb3737;
   padding-left: 10px;
   padding-right: 10px;
 }
 
 header > div > a:hover {
-  color: #6737fb;
+  color: #fb3737;
 }
 
 header > div {
@@ -283,7 +283,7 @@ footer {
   position: absolute;
   bottom: 0;
   left: 0;
-  background: linear-gradient(45deg, #6737fb, #3d84ee);
+  background: linear-gradient(45deg, #fb3737, #eb471b);
   width: 100%;
   z-index: 10;
 }
