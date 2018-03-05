@@ -294,13 +294,13 @@ footer {
     transform: scale(1);
   }
 }
-.slideup-enter-active {
-  animation: slideup .5s;
+.slideupfade-enter-active {
+  animation: slideupfade .5s;
 }
-.slideup-leave-active {
-  animation: slideup 0.5s reverse;
+.slideupfade-leave-active {
+  animation: slideupfade 0.5s reverse;
 }
-@keyframes slideup {
+@keyframes slideupfade {
   100% {
     transform: translatey(0px);
     opacity: 1;
