@@ -173,7 +173,7 @@ img {
   margin-right: auto;
 }
 
-.button {
+button {
   padding: 10px 20px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -186,6 +186,8 @@ img {
   background: $accent-grad;
   box-shadow: 0 0 3px 1px rgba(60, 60, 60, 0.2);
   text-transform: capitalize;
+  font-size: 16px;
+  font-family: 'Inconsolata', monospace;
 }
 header {
   padding: 10px 20px;
@@ -221,7 +223,7 @@ footer {
   min-height: 50px;
   padding-top:20px;
   padding-bottom: 20px;
-  position: static;
+  position: absolute;
   bottom: 0;
   left: 0;
   background: $accent-grad;
@@ -242,12 +244,11 @@ footer {
 #particles-js {
   position:absolute;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 80px);
   background-color: none;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  z-index: 1;
 }
 .on-mobile {
   display: none;
@@ -268,10 +269,53 @@ footer {
   padding-top: $space;
   padding-bottom: $space;
 }
+/* VUE.js transitions */
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+.bounce-enter-active {
+  animation: bounce-in .5s;
+}
+.bounce-leave-active {
+  animation: bounce-in .5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.slideup-enter-active {
+  animation: slideup .5s;
+}
+.slideup-leave-active {
+  animation: slideup 0.5s reverse;
+}
+@keyframes slideup {
+  100% {
+    transform: translatey(0px);
+    opacity: 1;
+  }
+  0% {
+    transform: translatey(-100px);
+    opacity: 0;
+  }
+}
+
 #hexGrid {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  min-height: 389px;
   margin: 0 auto;
   overflow: hidden;
   font-size: 15px;

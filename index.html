@@ -3,18 +3,26 @@ layout: default
 ---
 <div id="particles-js"></div>
 
-<div class="container">
-  <div class="center"><img class="m-t-100 logo center" src="/assets/img/logo.png"/></div>
+<div id="services" class="container">
+  <transition name="slideup">
+    <div class="center"><img class="m-t-100 logo center" src="/assets/img/logo.png"/></div>
+  </transition>
   <div class="title-box center">
-    <h1>kørerkanin</h1>
-    <h2 style="margin-top: -20px;">Business Consulting <br class="on-mobile">and Web Development</h2>
-    <div class="m-t-50">
-      <a class="button white" href="">Services</a>
-    </div>
+    <transition name="slideup">
+      <div v-if="!services">
+        <h1>kørerkanin</h1>
+        <h2 style="margin-top: -20px;">Business Consulting <br class="on-mobile">and Web Development</h2>
+      </div>
+    </transition>
+      <div class="m-t-50">
+        <button class="white" @click='toggle()'>Services</button>
+      </div>
   </div>
 
-  <div class="space">
-    <ul id="hexGrid">
+  <div class="space" >
+    <transition name="bounce">
+
+    <ul id="hexGrid" v-if="services">
 
       <li class="hex">
         <div class="hexIn">
@@ -78,8 +86,33 @@ layout: default
           </a>
         </div>
       </li>
-      
+
+      <li class="hex">
+        <div class="hexIn">
+          <a class="hexLink" href="#">
+            <h1>This is a title</h1>
+            <p>Some sample text about the article this hexagon leads to</p>
+          </a>
+        </div>
+      </li>
+
+      <li class="hex">
+        <div class="hexIn">
+          <a class="hexLink" href="#">
+            <h1>This is a title</h1>
+            <p>Some sample text about the article this hexagon leads to</p>
+          </a>
+        </div>
+      </li>
+
     </ul>
+
+  </transition>
   </div>
+
+
+
+
+
 
 </div>
