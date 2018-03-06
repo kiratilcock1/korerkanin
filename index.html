@@ -4,9 +4,7 @@ layout: default
 <div id="particles-js"></div>
 
 <div id="services" class="container">
-  <transition name="slideup">
-    <div class="center"><img class="m-t-100 logo center" src="/assets/img/logo.png"/></div>
-  </transition>
+  <div class="center"><img class="m-t-100 logo center" src="/assets/img/logo.png"/></div>
   <div class="title-box center">
     <transition name="slideupfade">
       <div v-if="!services">
@@ -15,7 +13,9 @@ layout: default
       </div>
     </transition>
       <div class="m-t-50">
-        <button class="white" @click='toggle()'>Services</button>
+        <button v-if="!services" class="white" @click='toggle()'>Services</button>
+        <button v-if="services" class="white" @click='toggle()'>Home</button>
+        <i class="fab fa-github"></i>
       </div>
   </div>
 
