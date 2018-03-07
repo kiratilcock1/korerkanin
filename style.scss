@@ -23,12 +23,7 @@
 @import "variables";
 // Syntax highlighting @import is at the bottom of this file
 
-html {
-  font-size: 100%;
-  height: 100%;
-}
-
-body {
+html,body {
 	background: white;
   font-size: 18px;
   font-family: $walsheim;
