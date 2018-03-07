@@ -15,6 +15,7 @@ $lightGray: #eee;
 $white: #fff;
 $accent-grad: linear-gradient(45deg, #fb3737, #eb471b);
 $accent: #fb3737;
+$accent-dark: shade($accent, 40%);
 $accent-transparent: rgba(#fb3737, 0.6);
 $space: 30px;
 
