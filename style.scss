@@ -19,10 +19,10 @@ html {
 }
 
 body {
-	background: $white;
+	background: white;
   font-size: 18px;
   font-family: 'Inconsolata', monospace;
-  color: $darkGray;
+  color: $darkerGray;
   height: 100%;
 }
 .container {
@@ -196,8 +196,44 @@ header {
 header > div > a {
   line-height: 50px;
   color: $accent;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  position: relative;
+  padding-bottom: 8px;
+
+   &:before,
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: 2px;
+		left: 0; right: 0;
+		height: 2px;
+		background-color: $accent;
+	}
+	&:before {
+		opacity: 0;
+		transform: translateY(- $distance);
+		transition: transform 0s $easeOutBack, opacity 0s;
+	}
+	&:after {
+		opacity: 0;
+		transform: translateY($distance/2);
+		transition: transform $duration $easeOutBack, opacity $duration;
+	}
+	&:hover,
+	&:focus {
+		&:before,
+		&:after {
+			opacity: 1;
+			transform: translateY(0);
+		}
+		&:before {
+			transition: transform $duration $easeOutBack, opacity $duration;
+		}
+		&:after {
+			transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
+		}
+	}
 }
 header > div > a:hover {
   color: $accent;
@@ -212,6 +248,9 @@ header > div {
 .left-text {
   text-align: left;
   float: left;
+}
+.active {
+  font-weight: bold;
 }
 .hamburger-on-mobile {
   @include mobile {
@@ -236,7 +275,7 @@ footer {
   position: relative;
   background: rgba(255, 255, 255, 0.7);
   width: 100%;
-  max-width: 600px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -474,6 +513,7 @@ footer {
         font-size: 13px;
     }
 }
+
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start

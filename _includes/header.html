@@ -1,12 +1,10 @@
 <!-- Navigation -->
 <header class="container">
     <div class="left-text">
-      <a href="/">kørerkanin</a>
+      <a {% if page.url == '/' %} class="active" {% endif %} href="/">kørerkanin</a>
     </div>
     <div class="hamburger-on-mobile right-text">
-      <a href="/services">services</a>
-      <a href="/team">team</a>
+      <a href="/team" {% if page.url == '/team/' %} class="active" {% endif %}>team</a>
       <a href="mailto:contact@korerkanin.com">contact</a>
-
     </div>
 </header>
