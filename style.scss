@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
   color: $darkerGray;
   font-weight: bold;
 
-  line-height: 1.2;
+  line-height: 1.5;
   margin: 15px 0;
   padding: 0;
 
@@ -131,13 +131,23 @@ a {
 .m-t-150 {
   margin-top: 150px;
 }
+.p-t-100 {
+  padding-top: 100px;
+}
 .center {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
+.full-page {
+  min-height: 100vh;
+  height: auto;
+}
 
-button {
+.alt-background {
+  background: $accent-grad;
+}
+.button {
   padding: 10px 20px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -152,7 +162,7 @@ button {
   font-size: 16px;
   font-family: $walsheim;
 }
-button:hover{
+.button:hover{
   color: black;
 }
 .hvr-shutter-out-horizontal {
@@ -198,8 +208,15 @@ button:hover{
 header {
   padding: 10px 20px;
   height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  width: 100%;
+  z-index: 50;
 }
-header > div > a {
+header > div> div > a {
   line-height: 50px;
   color: $accent;
   margin-left: 10px;
@@ -241,10 +258,10 @@ header > div > a {
 		}
 	}
 }
-header > div > a:hover {
+header > div > div > a:hover {
   color: $accent;
 }
-header > div {
+header > div > div {
   max-width: 40%;
 }
 .right-text {
@@ -265,13 +282,14 @@ header > div {
   }
 }
 footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
   height: auto;
   min-height: 50px;
   padding-top:20px;
   padding-bottom: 20px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   background: $accent-grad;
   width: 100%;
   z-index: 10;
@@ -290,7 +308,7 @@ footer {
 #particles-js {
   position:absolute;
   width: 100%;
-  height: calc(100% - 80px);
+  height: 100vh;
   background-color: none;
   background-repeat: no-repeat;
   background-size: cover;
@@ -311,219 +329,61 @@ footer {
 .logo {
   max-width: 300px;
   width: 100%;
+  z-index: 10;
+  position: relative;
+}
+.logo-small {
+  width: 30px;
 }
 .space {
   padding-top: $space;
   padding-bottom: $space;
 }
-/* VUE.js transitions */
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  /* IE 10 */
+  display: -ms-grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
-.bounce-enter-active {
-  animation: bounce-in .5s;
-}
-.bounce-leave-active {
-  animation: bounce-in .5s reverse;
-}
-@keyframes bounce-in {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-.slideupfade-enter-active {
-  animation: slideupfade .5s;
-}
-.slideupfade-leave-active {
-  animation: slideupfade 0.5s reverse;
-}
-@keyframes slideupfade {
-  100% {
-    transform: translatey(0px);
-    opacity: 1;
-  }
-  0% {
-    transform: translatey(-100px);
-    opacity: 0;
-  }
-}
-
-#hexGrid {
+.flex {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  @include mobile {
+    -ms-flex-direction: column;  /* IE 10 */
+    flex-direction: column;
+  }
+
+}
+.avatar {
+  max-width: 300px;
   width: 100%;
-  min-height: 389px;
-  margin: 0 auto;
-  overflow: hidden;
-  font-size: 15px;
-  list-style-type: none;
-  z-index: 10;
-  position: relative;
-}
-
-.hex {
-  position: relative;
-  visibility:hidden;
-  outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
-}
-.hex::after{
-  content:'';
-  display:block;
-  padding-bottom: 86.602%;  /* =  100 / tan(60) * 1.5 */
-}
-.hexIn{
-  position: absolute;
-  width:96%;
-  padding-bottom: 110.851%; /* =  width / sin(60) */
-  margin:0 2%;
-  overflow: hidden;
-  visibility: hidden;
-  outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
-  -webkit-transform: rotate3d(0,0,1,-60deg) skewY(30deg);
-      -ms-transform: rotate3d(0,0,1,-60deg) skewY(30deg);
-          transform: rotate3d(0,0,1,-60deg) skewY(30deg);
-}
-.hexIn * {
-  position: absolute;
-  background: $accent-grad;
-  visibility: visible;
-  outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
-}
-.hexLink {
-    display:block;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    color: #fff;
-    overflow: hidden;
-    -webkit-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
-        -ms-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
-            transform: skewY(-30deg) rotate3d(0,0,1,60deg);
-}
-
-/*** HEX CONTENT **********************************************************************/
-.hex img {
-  left: -100%;
-  right: -100%;
-  width: auto;
   height: 100%;
-  margin: 0 auto;
-  -webkit-transform: rotate3d(0,0,0,0deg);
-      -ms-transform: rotate3d(0,0,0,0deg);
-          transform: rotate3d(0,0,0,0deg);
+  max-height: 200px;
 }
-
-.hex h1, .hex p {
-  width: 100%;
-  padding: 5%;
-  box-sizing:border-box;
-  background-color: $accent-transparent;
-  font-weight: 300;
-  -webkit-transition:  -webkit-transform .2s ease-out, opacity .3s ease-out;
-          transition:          transform .2s ease-out, opacity .3s ease-out;
-}
-.hex h1 {
-  bottom: 50%;
-  padding-top:50%;
-  font-size: 1.5em;
-  z-index: 1;
-  -webkit-transform:translate3d(0,-100%,0);
-      -ms-transform:translate3d(0,-100%,0);
-          transform:translate3d(0,-100%,0);
-}
-.hex h1::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 45%;
-  width: 10%;
-  text-align: center;
-  border-bottom: 1px solid #fff;
-}
-.hex p {
-  top: 50%;
-  padding-bottom:50%;
-  -webkit-transform:translate3d(0,100%,0);
-      -ms-transform:translate3d(0,100%,0);
-          transform:translate3d(0,100%,0);
-}
-
-
-/*** HOVER EFFECT  **********************************************************************/
-.hexLink:hover h1, .hexLink:focus h1,
-.hexLink:hover p, .hexLink:focus p{
-  -webkit-transform:translate3d(0,0,0);
-      -ms-transform:translate3d(0,0,0);
-          transform:translate3d(0,0,0);
-}
-
-/*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
-@media (min-width:1201px) { /* <- 5-4  hexagons per row */
-  #hexGrid{
-    padding-bottom: 4.4%
-  }
-  .hex {
-    width: 20%; /* = 100 / 5 */
-  }
-  .hex:nth-child(9n+6){ /* first hexagon of even rows */
-    margin-left:10%;  /* = width of .hex / 2  to indent even rows */
+.space-on-desktop {
+  margin-left: $space;
+  margin-right: $space;
+  margin-top: -2px;
+  @include mobile {
+    margin-left: auto;
+    margin-top: auto;
+    margin-right: auto;
   }
 }
-
-@media (max-width: 1200px) and (min-width:901px) { /* <- 4-3  hexagons per row */
-  #hexGrid{
-    padding-bottom: 5.5%
-  }
-  .hex {
-    width: 25%; /* = 100 / 4 */
-  }
-  .hex:nth-child(7n+5){ /* first hexagon of even rows */
-    margin-left:12.5%;  /* = width of .hex / 2  to indent even rows */
+.italic {
+  font-style: italic;
+}
+.no-margins {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.max-avatar {
+  width: calc(100% - 300px);
+  @include mobile {
+    width: 100%;
   }
 }
-
-@media (max-width: 900px) and (min-width:601px) { /* <- 3-2  hexagons per row */
-  #hexGrid{
-    padding-bottom: 7.4%
-  }
-  .hex {
-    width: 33.333%; /* = 100 / 3 */
-  }
-  .hex:nth-child(5n+4){ /* first hexagon of even rows */
-    margin-left:16.666%;  /* = width of .hex / 2  to indent even rows */
-  }
-}
-
-@media (max-width: 600px) { /* <- 2-1  hexagons per row */
-  #hexGrid{
-    padding-bottom: 11.2%
-  }
-  .hex {
-    width: 50%; /* = 100 / 3 */
-  }
-  .hex:nth-child(3n+3){ /* first hexagon of even rows */
-    margin-left:25%;  /* = width of .hex / 2  to indent even rows */
-  }
-}
-
-@media (max-width: 400px) {
-    #hexGrid {
-        font-size: 13px;
-    }
-}
-
-
-// Settled on moving the import of syntax highlighting to the bottom of the CSS
-// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
-@import "highlights";
-@import "svg-icons";

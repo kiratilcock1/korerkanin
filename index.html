@@ -3,116 +3,84 @@ layout: default
 ---
 <div id="particles-js"></div>
 
-<div id="services" class="container">
-  <div class="center"><img class="m-t-100 logo center" src="/assets/img/bunny.svg"/></div>
-  <div class="title-box center">
-    <transition name="slideupfade">
-      <div v-if="!services">
-        <h1>kørerkanin</h1>
-        <h2 style="margin-top: -20px;">Business Consulting <br class="on-mobile">and Web Development {{ site.baseurl }}</h2>
+<div id="home" class="container">
+  <div class="full-page">
+    <div class="center"><img class="m-t-100 logo center" src="/assets/img/bunny.svg"/></div>
+    <div class="title-box center">
+      <transition name="slideupfade">
+        <div>
+          <h1>kørerkanin</h1>
+          <h2 style="margin-top: -20px;">Business Consulting <br class="on-mobile">and Web Development {{ site.baseurl }}</h2>
+        </div>
+      </transition>
+        <div class="m-t-50">
+          <a data-scroll href="#services" class="hvr-shutter-out-horizontal button">Services</a>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div id="services" class="alt-background">
+  <div class="container center full-page p-t-100">
+
+    <h2>
+      It takes two seconds for visitors to make an impression of your business. <br>
+      Let us help make those seconds count.
+    </h2>
+
+    <div class="grid">
+
+      <div>
+        <h3>Web Design</h3>
       </div>
-    </transition>
-      <div class="m-t-50">
-        <button v-if="!services" class="hvr-shutter-out-horizontal" @click='toggle()'>services</button>
-        <button v-if="services" class="white" @click='toggle()'>Home</button>
-        <i class="fab fa-github"></i>
+
+      <div>
+        <h3>Business Consulting</h3>
       </div>
+
+      <div>
+        <h3>Useability</h3>
+      </div>
+
+      <div>
+        <h3>Branding</h3>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="team" class="container full-page p-t-100">
+  <h2 class="center">Our Team</h2>
+
+  <div class="flex space">
+    <img src="/assets/img/kira.jpg" class="avatar"/>
+    <div class="space-on-desktop max-avatar">
+      <h2 class="no-margins">Kira Tilcock - B.Sc Computer Science</h2>
+      <p class="no-margins">Founder, CEO.</p>
+      <p>Kira is a kick-ass person.</p>
+    </div>
   </div>
 
-  <div class="space" >
-    <transition name="bounce">
-
-    <ul id="hexGrid" v-if="services">
-
-      <li class="hex">
-        <div class="hexIn">
-          <a class="hexLink" href="#">
-            <h1>This is a title</h1>
-            <p>Some sample text about the article this hexagon leads to</p>
-          </a>
-        </div>
-      </li>
-
-      <li class="hex">
-        <div class="hexIn">
-          <a class="hexLink" href="#">
-            <h1>This is a title</h1>
-            <p>Some sample text about the article this hexagon leads to</p>
-          </a>
-        </div>
-      </li>
-
-      <li class="hex">
-        <div class="hexIn">
-          <a class="hexLink" href="#">
-            <h1>This is a title</h1>
-            <p>Some sample text about the article this hexagon leads to</p>
-          </a>
-        </div>
-      </li>
-
-      <li class="hex">
-        <div class="hexIn">
-          <a class="hexLink" href="#">
-            <h1>This is a title</h1>
-            <p>Some sample text about the article this hexagon leads to</p>
-          </a>
-        </div>
-      </li>
-
-      <li class="hex">
-        <div class="hexIn">
-          <a class="hexLink" href="#">
-            <h1>This is a title</h1>
-            <p>Some sample text about the article this hexagon leads to</p>
-          </a>
-        </div>
-      </li>
-
-      <li class="hex">
-        <div class="hexIn">
-          <a class="hexLink" href="#">
-            <h1>This is a title</h1>
-            <p>Some sample text about the article this hexagon leads to</p>
-          </a>
-        </div>
-      </li>
-
-      <li class="hex">
-        <div class="hexIn">
-          <a class="hexLink" href="#">
-            <h1>This is a title</h1>
-            <p>Some sample text about the article this hexagon leads to</p>
-          </a>
-        </div>
-      </li>
-
-      <li class="hex">
-        <div class="hexIn">
-          <a class="hexLink" href="#">
-            <h1>This is a title</h1>
-            <p>Some sample text about the article this hexagon leads to</p>
-          </a>
-        </div>
-      </li>
-
-      <li class="hex">
-        <div class="hexIn">
-          <a class="hexLink" href="#">
-            <h1>This is a title</h1>
-            <p>Some sample text about the article this hexagon leads to</p>
-          </a>
-        </div>
-      </li>
-
-    </ul>
-
-  </transition>
+  <div class="flex space">
+    <div class="space-on-desktop right-text max-avatar">
+      <h2 class="no-margins">Eamon Murphy - B.Eng</h2>
+      <p class="no-margins">CTO.</p>
+      <p>Eamon is a kick-ass person.</p>
+    </div>
+    <img src="/assets/img/eamon.jpg" class="avatar right-text"/>
   </div>
 
+</div>
 
 
-
-
-
+<div id="contact" class="container full-page p-t-100">
+<h2 class="center">
+  Have any questions?<br>
+  Ready to take the next step and propel your business into the 21st century?<br>
+  Lets talk.
+</h2>
+<div class="center m-t-50">
+  <a class="button hvr-shutter-out-horizontal" href="mailto:contact@korerkanin.com">Contact</a>
+</div>
 </div>

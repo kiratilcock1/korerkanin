@@ -42,25 +42,16 @@
 
     {% include footer.html %}
 
-    <!-- Scripts -->
+    <!-- Particles -->
     <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="{{ site.baseurl }}/assets/js/particles.js"></script>
 
-    <!-- Vue.JS -->
-    <script src="https://unpkg.com/vue"></script>
+    <!-- SmoothScrollJS -->
+    <script src="{{ site.baseurl }}/assets/js/smooth-scroll.js"></script>
     <script>
-    new Vue({
-    el: '#services',
-    data: {
-        services: false
-    },
-    methods:{
-        toggle: function(){
-            this.services = !this.services
-        }
-    }
-});
+    	var scroll = new SmoothScroll('a[href*="#"]');
     </script>
+
 
   </body>
 </html>
