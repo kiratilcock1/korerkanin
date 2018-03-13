@@ -1,0 +1,21 @@
+---
+layout: default
+title: blog
+permalink: /blog/
+---
+<div id="blog" class="container">
+  <div class="posts m-t-50 space">
+  {% for post in site.posts %}
+    <article class="post">
+
+      <h3 class="accent m-t-50"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+
+      <div class="entry">
+        {{ post.excerpt }}
+      </div>
+
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+    {% endfor %}
+  </div>
+</div>
