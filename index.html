@@ -3,14 +3,88 @@ layout: default
 ---
 <div id="particles-js"></div>
 
-<div class="container">
-  <div class="center"><img class="m-t-100 logo center" src="/assets/img/logo.png"/></div>
-  <div class="title-box center">
-    <h1>kørerkanin</h1>
-    <h2 style="margin-top: -20px;">Business Consulting <br class="on-mobile">and Web Development</h2>
-    <div class="m-t-50">
-      <a class="button white" href="">Services</a>
+<div id="home" class="container">
+  <div class="full-page">
+    <div class="center"><img class="m-t-100 logo center" src="/assets/img/bunny.svg"/></div>
+    <div class="title-box center">
+      <transition name="slideupfade">
+        <div>
+          <h1>kørerkanin</h1>
+          <h2 style="margin-top: -20px;">Business Consulting <br class="on-mobile">and Product Development</h2>
+        </div>
+      </transition>
+        <div class="m-t-50">
+          <a data-scroll href="#services" class="hvr-shutter-out-horizontal button">Services</a>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div id="services" class="alt-background">
+  <div class="container center full-page p-t-100">
+
+    <h2>
+      It takes two seconds for visitors to make an impression of your business. <br>
+      Let us help make those seconds count.
+    </h2>
+
+    <div class="grid">
+
+      <div>
+        <h2>Web Design</h2>
+      </div>
+
+      <div>
+        <h2>Business Consulting</h2>
+      </div>
+
+      <div>
+        <h2>Human Factors Engineering</h2>
+      </div>
+
+      <div>
+        <h2>Branding</h2>
+      </div>
+
+      <div>
+        <h2>E-Commence</h2>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<div id="team" class="container full-page p-t-100">
+  <h2 class="center">Our Team</h2>
+
+  <div class="flex space">
+    <img src="/assets/img/kira.jpg" class="avatar"/>
+    <div class="space-on-desktop max-avatar">
+      <h2 class="no-margins">Kira Tilcock - B.Sc Computer Science</h2>
+      <p class="no-margins">Founder, CEO.</p>
+      <p></p>
     </div>
   </div>
 
+  <div class="flex space">
+    <div class="space-on-desktop right-text max-avatar">
+      <h2 class="no-margins">Eamon Murphy - B.Eng</h2>
+      <p class="no-margins">CTO.</p>
+      <p></p>
+    </div>
+    <img src="/assets/img/eamon.jpg" class="avatar right-text"/>
+  </div>
+
+</div>
+
+<div id="contact" class="container full-page p-t-100">
+<h2 class="center">
+  Have any questions?<br>
+  Ready to take the next step and propel your business into the 21st century?<br>
+  Lets talk.
+</h2>
+<div class="center m-t-50">
+  <a class="button hvr-shutter-out-horizontal" href="mailto:contact@korerkanin.com">Contact</a>
+</div>
 </div>
