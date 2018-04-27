@@ -79,11 +79,10 @@ h2 {
 }
 
 h3 {
-  font-size: 24px;
-  font-weight: bold;
-  font-family: $merriweather;
+  font-size: 20px;
+  font-weight: normal;
   @include mobile {
-      font-size: 20px;
+      font-size: 18px;
   }
 }
 
@@ -363,11 +362,11 @@ footer {
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 20px;
   /* IE 10 */
   display: -ms-grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
   -ms-grid-rows: 1fr;
 }
 .flex {
